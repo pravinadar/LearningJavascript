@@ -35,6 +35,9 @@ console.log(typeof null); // object
 // console.log("2" > 1);
 // console.log("02" > 1);
 
+
+// avoid these kind of conversions and comparisons
+
 console.log(null > 0);
 console.log(null == 0);
 console.log(null >= 0);

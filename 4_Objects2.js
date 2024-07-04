@@ -74,19 +74,19 @@ const course = {
 
 // course.courseInstructor
 
-const {courseInstructor: instructor} = course
+// Extracting courseInstructor and renaming it to instructor
+const {courseInstructor: instructor} = course;
 
-// console.log(courseInstructor);
-console.log(instructor);
+console.log(instructor); // Outputs: "nivarp"
+// console.log(courseInstructor); // This would cause an error because courseInstructor is not 
+// defined in this scope.
 
-// {
-//     "name": "nivarp",
-//     "coursename": "js",
-//     "price": "free"
-// }
+// After destructuring, courseInstructor is no longer directly accessible unless using course.courseInstructor. 
+// The destructured variable is instructor.
 
-[
-    {},
-    {},
-    {}
-]
+
+// [
+//     {},
+//     {},
+//     {}
+// ]

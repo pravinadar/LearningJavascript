@@ -42,7 +42,7 @@ function loginUserMessage2(username = "sam") {  // default value username = "sam
 // console.log(loginUserMessage("Pravin"))
 
 
-function calculateCartPrice(val1, val2, ...num1) {
+function calculateCartid(val1, val2, ...num1) {
     return num1
 }
 
@@ -53,17 +53,17 @@ function calculateCartPrice(val1, val2, ...num1) {
 
 const user = {
     username: "Pravin",
-    prices: 199
+    id: 199
 }
 
 function handleObject(anyObject) { // anyObject will be any parameter but wrt this function, we will be using it as an object
-    console.log(`Username is ${anyObject.username} and price is ${anyObject.price}`);
-} // if there is username and price in the object we will use as input, then we'll get the values else it will be undefined
+    console.log(`Username is ${anyObject.username} and id is ${anyObject.id}`);
+} // if there is username and id in the object we will use as input, then we'll get the values else it will be undefined
 
 // handleObject(user)
 handleObject({    // another way of using object to input in the function
     username: "sam",
-    price: 399
+    id: 399
 })
 
 const myNewArray = [200, 400, 100, 600]

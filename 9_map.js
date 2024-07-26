@@ -23,6 +23,6 @@ for (const [key, value] of map) { // destructing
 
 }
 
-for (const key in map) {
-    console.log(key);
+for (const i in map) {
+    console.log(i);
 }

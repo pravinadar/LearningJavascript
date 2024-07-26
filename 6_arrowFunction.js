@@ -47,7 +47,8 @@ const aFunction =  () => {      // arrow function
 
 
 const addTwo = (num1, num2) => ({username: "pravin"})   // Arrow function returning an object with 'username' property
-
+// returns object and not value. 
+// if used {} then use return
 
 console.log(addTwo(3, 4)) // Logs the result of calling 'addTwo' with arguments 3 and 4
-// Logs {username: "hitesh"}
+// Logs {username: "pravin"}

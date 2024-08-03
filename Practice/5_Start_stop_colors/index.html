@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Unlimited Colors</h1>
+    <button class="start">START</button>
+    <button class="stop">STOP</button>
+
+    <script>
+        let colorsRun;
+        const start = document.querySelector('.start')
+        const stopp = document.querySelector('.stop')
+
+        function newColorInBG() {
+            // colors have six digits ( hexadecimal values ) so we will
+            // use that to generate a new color
+            const hex='0123456789ABCDEF'
+
+            let Color = "#"
+            for (let i = 0; i < 6; i++) {
+                Color+=hex[Math.floor(Math.random()*16)]
+
+            }
+            // return Color
+            document.body.style.backgroundColor=Color
+        }
+
+        start.addEventListener('click', function(){
+            colorsRun=setInterval(newColorInBG,500)
+        })
+        stopp.addEventListener('click', function(){
+            clearInterval(colorsRun)
+            // colorsRun=null;
+        })
+
+
+    </script>
+
+</body>
+
+</html>
+
+
+<!-- // Optimal Method
+
+const randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+let intervalId;
+const startChangingColor = function () {
+  if (!intervalId) {
+    intervalId = setInterval(changeBgColor, 1000);
+  }
+
+  function changeBgColor() {
+    document.body.style.backgroundColor = randomColor();
+  }
+};
+const stopChangingColor = function () {
+  clearInterval(intervalId);
+  intervalId = null; ***
+};
+
+document.querySelector('#start').addEventListener('click', startChangingColor);
+
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+ -->

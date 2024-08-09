@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API One</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+    
+        .card {
+            width: 250px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 2px solid #333;
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    
+        img {
+            width: 100%;
+            box-shadow: 1px 1px 10px 1px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+    
+        .profile_name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <h1>Github Profile</h1>
+
+    <div class="card">
+
+        <div class="profile_picture"></div>
+        <div class="profile_name"></div>
+
+    </div>
+
+    <script>
+
+        // states
+        // 0	UNSENT	Client has been created. open() not called yet.
+        // 1	OPENED	open() has been called.
+        // 2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+        // 3	LOADING	Downloading; responseText holds partial data.
+        // 4	DONE	The operation is complete.
+        
+        
+        // JavaScript to fetch and display GitHub profile information
+        // Selects the element with the class "profile_picture" and assigns it to the variable 'pf'
+        const pf = document.querySelector('.profile_picture');
+        // Selects the element with the class "profile_name" and assigns it to the variable 'pn'
+        const pn = document.querySelector('.profile_name');
+        // URL of the GitHub API endpoint for fetching user data
+        const requestURL = 'https://api.github.com/users/pravinadar';
+        // Creates a new XMLHttpRequest object
+        const xml_http_request = new XMLHttpRequest();
+        // console.log(xml_http_request)
+
+        // Initializes a new GET request to the specified URL
+        xml_http_request.open('GET', requestURL);
+        // Sets up a function to handle the state change of the XMLHttpRequest
+        xml_http_request.onreadystatechange = function () {
+            console.log(xml_http_request.readyState);
+            // Checks if the request is complete
+            if (xml_http_request.readyState === 4) {
+                console.log(this.responseText)
+                // Parses the JSON response
+                const data = JSON.parse(this.responseText);
+                // console.log(data)
+
+                // Sets the inner HTML of the profile_picture div to an image element
+                pf.innerHTML = `<img src="${data.avatar_url}" alt="profile_image">`
+                // Sets the inner HTML of the profile_name div to the username
+                pn.innerHTML = `username : ${data.login}`
+            }
+        }
+        // Sends the request to the server
+        xml_http_request.send();
+    </script>
+
+</body>
+
+</html>

@@ -13,7 +13,7 @@ const regularUser = {
     fullname: {
         userfullname: {         // object inside a object inside another object
             firstname: "nivarp",
-            lastname: "choudhary"
+            lastname: "radan"
         }
     }
 }

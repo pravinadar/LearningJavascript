@@ -35,8 +35,6 @@ console.log(JsUser.greetingTwo());
 
 
 
-
-
 // Symbol: Symbol is a built-in object whose constructor returns a unique symbol.
 
 // Symbols are often used as unique property keys in objects.

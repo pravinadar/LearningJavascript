@@ -26,7 +26,7 @@ new Promise(function(resolve, reject){
 // Another useCase
 const third_promise = new Promise(function(resolve, reject){
     setTimeout(function(){
-        resolve({username: "Chai", email: "chai@example.com"})
+        resolve({username: "pnad", email: "pnad@example.com"})
     }, 1000)
 })
 
@@ -38,9 +38,9 @@ third_promise.then(function(user){
 // Another useCase
 const fourth_promise = new Promise(function(resolve, reject){
     setTimeout(function(){
-        let error = true
+        let error = false
         if (!error) {
-            resolve({username: "hitesh", password: "123"})
+            resolve({username: "pravin", password: "123"})
         } else {
             reject('ERROR: Something went wrong')
         }

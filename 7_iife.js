@@ -12,5 +12,5 @@
     // anonymous IIFE with parameter
     // This arrow function takes a parameter 'name' and is immediately invoked.
     // It logs 'DB CONNECTED TWO' followed by the value of 'name' to the console.
-    console.log(`DB CONNECTED TWO ${name}`);
+    console.log(`DB CONNECTED TO ${name}`);
 } )('pravin'); // The function is invoked with the argument 'pravin'.
